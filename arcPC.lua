@@ -49,10 +49,36 @@ G2L["6"] = Instance.new("ImageLabel", G2L["1"]);
 G2L["6"]["BorderSizePixel"] = 0;
 G2L["6"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 17);
 G2L["6"]["Visible"] = false;
-G2L["6"]["Size"] = UDim2.new(0.5, 0, 0.6, 0);
+G2L["6"]["Size"] = UDim2.new(0.8, 0, 0.7, 0);
 G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6"]["Name"] = [[main]];
 G2L["6"]["Position"] = UDim2.new(0.05825958773493767, 0, 0.035087719559669495, 0);
+local guiObject = G2L["6"]-- Replace "G2L["6"]" with the actual name of your ImageLabel
+
+local UserInputService = game:GetService("UserInputService")
+
+local dragging
+local dragStart
+
+guiObject.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position - guiObject.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local newPosition = input.Position - dragStart
+        guiObject.Position = UDim2.new(0, newPosition.X, 0, newPosition.Y)
+    end
+end)
+
 
 -- StarterGui.Arceus X Lua REMAKE.main.UICorner
 G2L["7"] = Instance.new("UICorner", G2L["6"]);
