@@ -78,10 +78,6 @@
 	G2L["9"]["Name"] = [[Logo]];
 	G2L["9"]["BackgroundTransparency"] = 1;
 
-	-- StarterGui.Arceus X Lua REMAKE.main.logo.UIAspectRatioConstraint
-	G2L["a"] = Instance.new("UIAspectRatioConstraint", G2L["8"]);
-	G2L["a"]["AspectRatio"] = 1.0000001192092896;
-
 	-- StarterGui.Arceus X Lua REMAKE.main.UP
 	G2L["b"] = Instance.new("Frame", G2L["6"]);
 	G2L["b"]["BorderSizePixel"] = 0;
