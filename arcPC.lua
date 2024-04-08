@@ -49,7 +49,7 @@
 	G2L["6"]["BorderSizePixel"] = 0;
 	G2L["6"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 17);
 	G2L["6"]["Visible"] = false;
-	G2L["6"]["Size"] = UDim2.new(0.9, 0,0.591, 0);
+	G2L["6"]["Size"] = UDim2.new(1, 0,0.76, 0);
 	G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 	G2L["6"]["Name"] = [[main]];
 	G2L["6"]["Position"] = UDim2.new(0.05825958773493767, 0, 0.035087719559669495, 0);
